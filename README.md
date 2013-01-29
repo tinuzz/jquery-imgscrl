@@ -1,7 +1,16 @@
 jquery-imgscrl
 ==============
 
-A jQuery plugin for horizontally scrolling a large image in a small box
+A jQuery plugin for horizontally scrolling a large image in a smaller box.
+
+This plugin confines a possibly very wide image into a smaller box. When
+hovering the mouse pointer over the image, it scrolls horizontally. By
+moving all the way from left to right, you will see the entire image.
+
+The main use-case is the display of a panorama photo in a normally sized
+image container.
+
+It was inspired by http://www.gayadesign.com/scripts/jqueryphotonav/.
 
 ## Installation
 

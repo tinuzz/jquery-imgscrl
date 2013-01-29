@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="jquery.imgscrl.js"></script>
+		<title>Panorama</title>
+		<style>
+			.opt1 {
+				border: 1px solid red;
+				margin: 20px;
+			}
+			.container {
+				position: absolute;
+				left: 150px;
+				top: 150px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				options = { 'class': 'opt1' }
+				//options = {}
+				$('#panorama').imgscrl(640, options);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<img src="panorama.jpg" id="panorama" style="display: none;">
+		</div>
+	</body>
+</html>

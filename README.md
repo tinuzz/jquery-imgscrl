@@ -18,3 +18,7 @@ Put an image on your webpage:
 Confine it to a box with the width of your choice:
 
     $('#wideimage').imgscrl(640);
+
+The 'style' attribute on the image is not absolutely necessary, but it makes
+sure that your page is not cluttered with a giant image before the Javascript
+is executed. The plugin will display the image when called.

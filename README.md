@@ -12,6 +12,9 @@ image container.
 
 It was inspired by http://www.gayadesign.com/scripts/jqueryphotonav/.
 
+A demo, which is also included with the code, can be found here:
+https://www.grendelman.net/wp/jquery-imgscrl-plugin-demo/
+
 ## Installation
 
 Include script after the jQuery library:

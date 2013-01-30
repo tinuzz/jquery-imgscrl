@@ -35,25 +35,25 @@
 			'max-width': 'none'
 		});
 
-    // Check if image has dimensions; if not, it's probably not yet loaded.
-    var deferred  = $.Deferred();
-    if (this.width() == 0)
-      this[0].onload = deferred.resolve;
-    else
-      deferred.resolve();
+		// Check if image has dimensions; if not, it's probably not yet loaded.
+		var deferred = $.Deferred();
+		if (this.width() == 0)
+			this[0].onload = deferred.resolve;
+		else
+			deferred.resolve();
 
-    deferred.promise().then(function() {
-      $.imgscrl.containerWidth = width;
-      $.imgscrl.imgWidth = $(this).outerWidth(true);
+		deferred.promise().then(function() {
+			$.imgscrl.containerWidth = width;
+			$.imgscrl.imgWidth = $(this).outerWidth(true);
 
-      this.mousemove(function(event){
-        offset =  $(this).parent().offset()
-        var x = event.pageX - offset.left;
+			this.mousemove(function(event){
+				offset = $(this).parent().offset()
+				var x = event.pageX - offset.left;
 
-        var perc = (100 / ($.imgscrl.containerWidth / x));
-        $.imgscrl.posPicture($(this),perc);
-      });
-    }.bind(this));
+				var perc = (100 / ($.imgscrl.containerWidth / x));
+				$.imgscrl.posPicture($(this),perc);
+			});
+		}.bind(this));
 	}
 
 	$.imgscrl.posPicture = function(p,x) {
@@ -64,7 +64,7 @@
 		if (curX < 0) {
 			curX = 0;
 		}
-		
+
 		p.css({
 			'margin-left': '-' + curX + 'px'
 		});

@@ -35,17 +35,25 @@
 			'max-width': 'none'
 		});
 
-		$.imgscrl.containerWidth = width;
-		$.imgscrl.imgWidth = $(this).outerWidth(true);
+    // Check if image has dimensions; if not, it's probably not yet loaded.
+    var deferred  = $.Deferred();
+    if (this.width() == 0)
+      this[0].onload = deferred.resolve;
+    else
+      deferred.resolve();
 
-		this.mousemove(function(event){
-			offset =  $(this).parent().offset()
-			var x = event.pageX - offset.left;
+    deferred.promise().then(function() {
+      $.imgscrl.containerWidth = width;
+      $.imgscrl.imgWidth = $(this).outerWidth(true);
 
-			var perc = (100 / ($.imgscrl.containerWidth / x));
-			$.imgscrl.posPicture($(this),perc);
-		});
+      this.mousemove(function(event){
+        offset =  $(this).parent().offset()
+        var x = event.pageX - offset.left;
 
+        var perc = (100 / ($.imgscrl.containerWidth / x));
+        $.imgscrl.posPicture($(this),perc);
+      });
+    }.bind(this));
 	}
 
 	$.imgscrl.posPicture = function(p,x) {
